@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa04152-d196-46d5-808d-6630e9498f8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knihgt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Pieces.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/obligatorio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/obligatorio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knihgt.py" beforeDir="false" afterPath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/final.py" beforeDir="false" afterPath="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/final.py" afterDir="false" />
     </list>
@@ -18,8 +20,55 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/final.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="15">
+              <caret line="1" column="5" selection-start-line="1" selection-end-line="1" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knight.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="74">
+              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="22" selection-start-column="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/tictactoe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#24#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/core.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -28,16 +77,7 @@
         <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Pieces.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knihgt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -58,20 +98,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/knihgt.py" />
-        <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/__init__.py" />
-        <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knihgt.py" />
         <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Pieces.py" />
+        <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knihgt.py" />
+        <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/Knight.py" />
+        <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/__init__.py" />
+        <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knight.py" />
         <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/final.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/obligatorio.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Player.py" />
       </list>
     </option>
   </component>
@@ -83,6 +116,7 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollToSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -93,24 +127,6 @@
               <item name="obligatorio" type="b2602c69:ProjectViewProjectNode" />
               <item name="obligatorio" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="obligatorio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="obligatorio" type="462c0819:PsiDirectoryNode" />
-              <item name="adversarial_search-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="obligatorio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="obligatorio" type="462c0819:PsiDirectoryNode" />
-              <item name="adversarial_search-master" type="462c0819:PsiDirectoryNode" />
-              <item name="adversarial_search" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="obligatorio" type="b2602c69:ProjectViewProjectNode" />
-              <item name="obligatorio" type="462c0819:PsiDirectoryNode" />
-              <item name="adversarial_search-master" type="462c0819:PsiDirectoryNode" />
-              <item name="adversarial_search" type="462c0819:PsiDirectoryNode" />
-              <item name="games" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -119,11 +135,18 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games" />
+      <recent name="$PROJECT_DIR$/adversarial_search-master/adversarial_search" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -137,6 +160,81 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Python.Player">
+    <configuration name="Knight" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="obligatorio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knight.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Player" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="obligatorio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Player.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="final" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="obligatorio" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/final.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Player" />
+        <item itemvalue="Python.final" />
+        <item itemvalue="Python.Knight" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -148,23 +246,22 @@
       <option name="presentableId" value="Default" />
       <updated>1561494550716</updated>
       <workItem from="1561494551935" duration="1842000" />
-      <workItem from="1561498343229" duration="3928000" />
+      <workItem from="1561498343229" duration="14874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5770000" />
+    <option name="totallyTimeSpent" value="16716000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="144" width="1366" height="747" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25301206" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19126506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3403909" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -175,6 +272,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -185,46 +283,100 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/final.py</url>
-          <line>6</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/obligatorio$final.coverage" NAME="final Coverage Results" MODIFIED="1561515339795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games" />
+    <SUITE FILE_PATH="coverage/obligatorio$Player.coverage" NAME="Player Coverage Results" MODIFIED="1561515400189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games" />
+    <SUITE FILE_PATH="coverage/obligatorio$Knight.coverage" NAME="Knight Coverage Results" MODIFIED="1561514215646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/adversarial_search-master/adversarial_search/games" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/lib/python3.7/abc.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/__init__.py">
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/cuanteti.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="65" selection-start-line="1" selection-start-column="65" selection-end-line="1" selection-end-column="65" />
+        <state relative-caret-position="-432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/agents/mcts.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/agents/minimax.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
         </state>
       </provider>
+    </entry>
+    <entry file="uml://Python/#/home/nano/Documents/2019/UCU/IA/obligatorio/adversarial_search-master/adversarial_search/core.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/home/nano/Documents/2019/UCU/IA/obligatorio/adversarial_search-master/adversarial_search/core.py</OriginalElement>
+          <nodes>
+            <node x="" y="">object</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="34.0" y="48.0" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/tictactoe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/agents/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Pieces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knihgt.py">
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="45">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/Knight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adversarial_search-master/adversarial_search/games/final.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="15">
+          <caret line="1" column="5" selection-start-line="1" selection-end-line="1" selection-end-column="45" />
         </state>
       </provider>
     </entry>

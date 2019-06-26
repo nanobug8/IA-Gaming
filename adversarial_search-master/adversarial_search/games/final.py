@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-from .Pieces import *
-from .Knihgt import *
+from adversarial_search.games.Knight import *
 
 # Imports del resto de las piezas
 
-from ..core import Game
-from ..utils import coord_id, board_lines, print_board, game_result, cached_property, cached_indexed_property
+from adversarial_search.core import Game
+from adversarial_search.utils import coord_id, board_lines, print_board, game_result, cached_property, cached_indexed_property
 from abc import ABC, abstractmethod
 
 
@@ -20,7 +19,8 @@ class Final(Game):
         Game.__init__(self, *Final.PLAYERS)
         self.board = board
         self.enabled = enabled
-
+        k = Knight()
+        print(Knight.available_moves(k, board))
     class _Move(int):
         def __str__(self):
             return coord_id(*divmod(self, 9))
@@ -29,6 +29,11 @@ class Final(Game):
         return self.players[self.enabled]
 
 
+
+    #atacar(atacante, atacados): #una pieza y una lista de piezas
+
+    #atacante es la pieza del turno, la que se mueve.
+    #atacados son todas aquellas piezas que pueden ser atacadas dependiendo las condiciones
 
 
 
