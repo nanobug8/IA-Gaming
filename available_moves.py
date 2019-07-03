@@ -94,17 +94,17 @@ def knight_available_moves(board, team_nmbr):
         return ret
 
 
-def available_pieces(board):
+def available_pieces(board,team_nmbr):
         pieces = []
-        offset = 0 if turno == 1 else 3
+        offset = 0 if team_nmbr== 1 else 3
         for i in range(0,3):
                 if board[offset + i][1] > 0:
                         pieces.append(offset + i)
         return pieces
 
-def available_pieces_nemesis(board):
+def available_pieces_nemesis(board, team_nmbr):
         pieces = []
-        offset = 3 if turno == 1 else 0
+        offset = 3 if team_nmbr == 1 else 0
         for i in range(0,3):
                 if board[offset + i][1] > 0:
                         pieces.append(offset + i)
@@ -127,7 +127,7 @@ def tucutucutucu(board, team_nmbr):
         available_positions_archer = archer_available_moves(board, team_nmbr)
         available_positions_mague = mague_available_moves(board, team_nmbr)
 
-        opponent = available_pieces_nemesis(board)
+        opponent = available_pieces_nemesis(board, team_nmbr)
 
         movimientos = Union(tuculist, itertools.product([KNIGHT], available_positions_knight,[DO_NOT_ATTACK,ATTACK],opponent))
         movimientos = Union(movimientos, itertools.product([MAGUE],available_positions_mague,[DO_NOT_ATTACK,ATTACK],opponent))
