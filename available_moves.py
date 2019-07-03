@@ -1,6 +1,7 @@
 import itertools
 
 
+
 turno = 2
 obstaculos = [(1,4),(3,3),(5,2),(0,7)]
 
@@ -24,10 +25,14 @@ def moves(coord,cant):
 def manhattan_distance(c1,c2):
         return abs(c1[0] - c2[0]) + abs(c1[1] - c2[1])
 
-def mague_available_moves(board):
+
+def mague_available_moves(board, team_nmbr):
         ##expreso la posicion en coordenadas, (fila,columna)
         #Este variable coord luego sera el self.position de la pieza
-        coord = board[1][0]
+        if team_nmbr == 1:
+                coord = board[1][0]
+        else:
+                coord = board[4][0]
         ##busco los posibles movimientos dada la posicion (una o dos casillas en cada direccio$
         possible_moves = moves(coord,3)
         av_moves = []
@@ -43,10 +48,13 @@ def mague_available_moves(board):
         return ret
 
 
-def archer_available_moves(board):
+def archer_available_moves(board, team_nmbr):
         ##expreso la posicion en coordenadas, (fila,columna)
         #Este variable coord luego sera el self.position de la pieza
-        coord = board[2][0]
+        if team_nmbr == 1:
+                coord = board[2][0]
+        else:
+                coord = board[5][0]
         ##busco los posibles movimientos dada la posicion (una o dos casillas en cada direccio$
         possible_moves = moves(coord,3)
         av_moves = []
@@ -62,10 +70,13 @@ def archer_available_moves(board):
         return ret
 
 
-def knight_available_moves(board):
+def knight_available_moves(board, team_nmbr):
         ##expreso la posicion en coordenadas, (fila,columna)
         #Este variable coord luego sera el self.position de la pieza
-        coord = board[0][0]
+        if team_nmbr == 1:
+                coord = board[0][0]
+        else:
+                coord = board[3][0]
         ##busco los posibles movimientos dada la posicion (una o dos casillas en cada direccio$
         possible_moves = moves(coord,2)
         av_moves = []
@@ -109,12 +120,12 @@ def cmp(a, b):
     return (a > b) - (a < b)
 
 
-def tucutucutucu(board):
+def tucutucutucu(board, team_nmbr):
         tuculist = []
 
-        available_positions_knight = knight_available_moves(board)
-        available_positions_archer = archer_available_moves(board)
-        available_positions_mague = mague_available_moves(board)
+        available_positions_knight = knight_available_moves(board, team_nmbr)
+        available_positions_archer = archer_available_moves(board, team_nmbr)
+        available_positions_mague = mague_available_moves(board, team_nmbr)
 
         opponent = available_pieces_nemesis(board)
 
@@ -123,7 +134,11 @@ def tucutucutucu(board):
 
         movimientos = Union(movimientos,itertools.product([ARCHER],available_positions_archer,[DO_NOT_ATTACK,ATTACK],opponent))
 
+        #implementar ataques validos. Eliminacion de ataques invalidos
+
         print('SE MUEVE SE MUEVE SE JUEGA SE JUEGA: ', movimientos)
+
+        return movimientos
 
 
 def Union(lista, movements):
@@ -132,9 +147,27 @@ def Union(lista, movements):
         return lista
 
 
+def move(piece, coord, board):
+        board[piece][0] = coord
+
+def attack(nemesis, damage, board):
+        board[nemesis][1] -= damage
+        if board[nemesis][1] < 0:
+                board[nemesis][1] = 0
 
 
-board = [[(0,0),0],[(4,5),10],[(3,6),10],[(1,0),10],[(8,8),10],[(6,7),10]]
+def heal(team_nmbr, board, m_dmg_1):
+        if team_nmbr == 1:
+                #curo al bando jugador 1
+                rango = [0,2]
+                piece = 1
+        else:
+                rango = [3,5]
+                piece = 4
+
+        for i in rango:
+                if manhattan_distance(board[piece][0],board[i][0]) == 1:
+                        board[i][1] += m_dmg_1
+        print('obombo')
 
 
-tucutucutucu(board)
