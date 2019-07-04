@@ -1,5 +1,5 @@
 import itertools
-
+import copy
 
 
 turno = 2
@@ -120,7 +120,7 @@ def cmp(a, b):
     return (a > b) - (a < b)
 
 
-def tucutucutucu(board, team_nmbr):
+def tucutucutucu(board, dict, team_nmbr):
         tuculist = []
 
         available_positions_knight = knight_available_moves(board, team_nmbr)
@@ -128,23 +128,74 @@ def tucutucutucu(board, team_nmbr):
         available_positions_mague = mague_available_moves(board, team_nmbr)
 
         opponent = available_pieces_nemesis(board, team_nmbr)
+        movimientos_mage = []
+        movimientos_archer = []
 
-        movimientos = Union(tuculist, itertools.product([KNIGHT], available_positions_knight,[DO_NOT_ATTACK,ATTACK],opponent))
-        movimientos = Union(movimientos, itertools.product([MAGUE],available_positions_mague,[DO_NOT_ATTACK,ATTACK],opponent))
+        movimientos_kinght = Union(tuculist, itertools.product([KNIGHT], available_positions_knight))
+        movimientos_mage = Union(movimientos_mage, itertools.product([MAGUE],available_positions_mague))
+        movimientos_archer = Union(movimientos_archer,itertools.product([ARCHER],available_positions_archer))
 
-        movimientos = Union(movimientos,itertools.product([ARCHER],available_positions_archer,[DO_NOT_ATTACK,ATTACK],opponent))
+
 
         #implementar ataques validos. Eliminacion de ataques invalidos
 
-        print('SE MUEVE SE MUEVE SE JUEGA SE JUEGA: ', movimientos)
+        #print('SE MUEVE SE MUEVE SE JUEGA SE JUEGA: ', movimientos)
 
-        return movimientos
+        return 1 #movimientos
 
 
 def Union(lista, movements):
         for element in movements:
                 lista.append(element)
         return lista
+
+
+#
+def calculate_attack(board, dic, team_nmbr, moves):
+        a = 0
+        for m in moves:
+                if moves[0] == KNIGHT:
+                        piece = certain_piece(board,KNIGHT,team_nmbr)
+                        if max(abs(piece[0][0] - m[1][0]),abs(piece[0][1] - m[1][1])) == 2:
+                                #se movio dos
+                                a = 81
+                                if piece[0][1] - m[1][1] == 2:
+                                          #se movio hacia adelante
+                                        a = 1
+                                if piece[0][1] - m[0][1] == -2:
+                                                #reculo
+                                        a=2
+                                if piece[0][0] - m[1][0] == 2:
+                                        a = 3#izq
+                                if piece[0][0] - m[1][0] == -2:
+                                        a = 4#der
+                        elif(piece[0]== move[1]): #no mueve
+                                a = 5
+                        elif max(abs(piece[0][0]-m[1][0],abs(piece[0][1]-m[1][1])))==1:
+                                #mueve en L
+                                a = 6
+
+                if moves[0] == MAGUE:
+                        if piece[0] != m[1]:
+                                #se movio
+                                a = 7
+                        else:
+                                #ataca
+                                a = 8
+                if moves[0] == ARCHER:
+                        #archea
+                        a += 9
+        return 1
+
+
+def certain_piece(board, piece, team_nmbr):
+
+        if team_nmbr==1:
+                offset = 0
+        else:
+                offset = 3
+
+        return board[(piece - 1) + offset]
 
 
 def move(piece, coord, board):
