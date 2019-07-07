@@ -1,5 +1,6 @@
-from classes import*
-import mechanics
+import adversarial_search
+from adversarial_search.classes import *
+from adversarial_search.mechanics import *
 from adversarial_search.core import Game
 from adversarial_search.core import match,run_match
 from adversarial_search.utils import game_result
@@ -29,9 +30,9 @@ class KMA (Game):
 
     def moves(self):
         tot_moves = []
-        av_motion = mechanics.available_motion(self.board,self.enabled)
+        av_motion = adversarial_search.mechanics.available_motion(self.board,self.enabled)
         for motion in av_motion:
-            tot_attacks = mechanics.available_attacks (self.board,motion)
+            tot_attacks = adversarial_search.mechanics.available_attacks (self.board,motion)
             for one_attack in tot_attacks:
                 tot_moves.append(one_attack)
         return tot_moves
