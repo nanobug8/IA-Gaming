@@ -1,6 +1,7 @@
 import adversarial_search
 from adversarial_search.classes import *
 from adversarial_search.mechanics import *
+from adversarial_search.parameters import *
 from adversarial_search.core import Game
 from adversarial_search.core import match,run_match
 from adversarial_search.utils import game_result
@@ -8,30 +9,26 @@ from adversarial_search.utils import game_result
 
 
 PLAYERS = ('Good','Bad')
-k_hp = 30
-m_hp = 30
-a_hp = 30
-def enemy_in_position(board,attacked_position,attacking_piece):
-    ok = False
-    for other_piece in board:
-        if (other_piece.team!=attacking_piece.team):
-            if (other_piece.position==attacked_position):
-                ok = True
-knight_1 = piece(1, 1, k_hp, (0, 3))
-mage_1 = piece(1, 1, m_hp, (0, 2))
-archer_1 = piece(1, 1, a_hp, (0, 1))
-knight_2 = piece(2, 1, k_hp, (8, 3))
-mage_2 = piece(2, 1, m_hp, (8, 2))
-archer_2 = piece(2, 1, a_hp, (8, 1))
-initial_board = [knight_1, mage_1, archer_1, knight_2, mage_2, archer_2]
+
+
+
 class KMA (Game):
+    knight_1 = piece(1, 1, PARAM.k_hp, (0, 3))
+    mage_1 = piece(1, 1, PARAM.m_hp, (0, 2))
+    archer_1 = piece(1, 1, PARAM.a_hp, (0, 1))
+    knight_2 = piece(2, 1, PARAM.k_hp, (8, 3))
+    mage_2 = piece(2, 1, PARAM.m_hp, (8, 2))
+    archer_2 = piece(2, 1, PARAM.a_hp, (8, 1))
+
+    initial_board = [knight_1, mage_1, archer_1, knight_2, mage_2, archer_2]
 
 
 
     def __init__(self,board=initial_board,enabled=0):
         Game.__init__(self,*PLAYERS)
-        self.board = initial_board
+        self.board = board
         self.enabled=enabled
+
 
     def active_player(self):
         return self.players[self.enabled]

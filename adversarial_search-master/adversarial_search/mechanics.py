@@ -1,26 +1,10 @@
 from adversarial_search.classes import piece, motion, attack, move
-#from KMA import KMA
+from adversarial_search.parameters import PARAM
+from adversarial_search import KMA
 
-k_hp = 30
-m_hp = 30
-a_hp = 30
-k_dmg_1 = 10
-k_dmg_2 = 7
-k_dmg_3 = 5
-m_dmg_1 = -5
-m_dmg_2 = 3
-m_dist_1 = 4
-a_dmg_1 = 6
-a_dmg_2 = 4
 a_dist_1 = 4
-knight_1 = piece(1, 1, k_hp, (0, 3))
-mage_1 = piece(1, 2, m_hp, (0, 2))
-archer_1 = piece(1, 3, a_hp, (0, 1))
-knight_2 = piece(2, 1, k_hp, (8, 3))
-mage_2 = piece(2, 2, m_hp, (8, 2))
-archer_2 = piece(2, 3, a_hp, (8, 1))
 obstacles = [(2, 4), (3, 3), (5, 1), (6, 0)]
-initial_board = [knight_1,mage_1,archer_1,knight_2,mage_2,archer_2]
+#initial_board = [knight_1,mage_1,archer_1,knight_2,mage_2,archer_2]
 
 def manhattan_distance(pos1,pos2):
     return (abs(pos1[0]-pos2[0])+abs(pos1[1]-pos2[1]))
@@ -68,20 +52,7 @@ def check_pos (board,position,obstacles=obstacles):
 #Checks if there's an obstacle or token between two pieces that share an axis
 #Attribute axis is the non-shared component between the coordinates
 #Returns true if the way is covered
-"""
-def obstacle_in_the_way(board,coord1,coord2,axis):
-    ok = False
-    lowest = min(coord1[axis],coord2[axis])
-    highest = max(coord1[axis],coord2[axis])
-    for i in range (lowest,highest):
-        if (axis==0)& (not check_pos(board,(i,coord1[1]))):
-            ok = True
-            return ok
-        if (axis==1)& (not check_pos(board,(coord1[0],i))):
-            ok = True
-            return ok
-    return ok
-"""
+
 
 def obstacle_in_the_way(board,coord1,coord2):	
 	ok=False
@@ -183,19 +154,19 @@ def knight_charge(board,motion,i_pos,f_pos):
     if (f_pos[0]-i_pos[0]==2):
         for index in range(len(board)):
             if (board[index].position == (f_pos[0]+1,f_pos[1]))&(board[index].team!=motion.piece.team):
-                one_attack=attack(index,k_dmg_1)
+                one_attack=attack(index,PARAM.k_dmg_1)
     if (f_pos[0]-i_pos[0]==-2):
         for index in range(len(board)):
             if (board[index].position == (f_pos[0]-1,f_pos[1]))&(board[index].team!=motion.piece.team):
-                one_attack=attack(index,k_dmg_1)
+                one_attack=attack(index,PARAM.k_dmg_1)
     if (f_pos[1]-i_pos[1]==2):
         for index in range(len(board)):
             if (board[index].position == (f_pos[0],f_pos[1]+1))&(board[index].team!=motion.piece.team):
-                one_attack=attack(index,k_dmg_1)
+                one_attack=attack(index,PARAM.k_dmg_1)
     if (f_pos[1]-i_pos[1]==-2):
         for index in range(len(board)):
             if (board[index].position == (f_pos[0],f_pos[1]-1))&(board[index].team!=motion.piece.team):
-                one_attack=attack(index,k_dmg_1)
+                one_attack=attack(index,PARAM.k_dmg_1)
     return one_attack
 
 
@@ -213,12 +184,12 @@ def knight_attack(board,motion):
         for cell in neighbours(motion.final_position):
             for index in range(len(board)):
                 if (board[index].position == cell)&(board[index].team!=motion.piece.team):
-                    k_attack=attack(damaged=index,dmg_points=k_dmg_2)
+                    k_attack=attack(damaged=index,dmg_points=PARAM.k_dmg_2)
                     k_move=move(motion,k_attack)
                     total_moves.append(k_move)
     #Steady attack
     if pos_diff==0:
-        k_attack=attack(damaged=None,dmg_points=k_dmg_3)
+        k_attack=attack(damaged=None,dmg_points=PARAM.k_dmg_3)
         k_move = move(motion,k_attack)
         for cell in neighbours(motion.final_position):
             for index in range(len(board)):
@@ -231,7 +202,7 @@ def knight_attack(board,motion):
 def mage_attack(board,motion):
     total_moves=[]
     if motion.piece.position==motion.final_position:
-        m_cure = attack(damaged=None, dmg_points=m_dmg_1)
+        m_cure = attack(damaged=None, dmg_points=PARAM.m_dmg_1)
         for cell in neighbours(motion.final_position):
             for index in range(len(board)):
                 if (board[index].position == cell)&(board[index].team==motion.piece.team):
@@ -239,20 +210,20 @@ def mage_attack(board,motion):
                     m_move = move(motion, m_cure)
                     total_moves.append(m_move)
     else:
-        m_attack = attack(damaged=None,dmg_points=m_dmg_2)
+        m_attack = attack(damaged=None,dmg_points=PARAM.m_dmg_2)
         for index in range(len(board)):
             if board[index].team!=motion.piece.team:
-                if manhattan_distance(board[index].position,motion.final_position)>m_dist_1:
-                    m_attack = attack(damaged=index, dmg_points=m_dmg_2)
+                if manhattan_distance(board[index].position,motion.final_position)> PARAM.m_dist_1:
+                    m_attack = attack(damaged=index, dmg_points=PARAM.m_dmg_2)
                     m_move = move(motion, m_attack)
                     total_moves.append(m_move)
     return total_moves
 
 def archer_attack(board,motion):
     if motion.final_position==motion.piece.position:
-        archer_damage = a_dmg_1
+        archer_damage = PARAM.a_dmg_1
     else:
-        archer_damage = a_dmg_2
+        archer_damage = PARAM.a_dmg_2
     total_moves=[]
     for index in range(len(board)):
         token = board[index]
@@ -285,9 +256,9 @@ def available_attacks(board,motion):
 def main():
     k1=piece(1,1,30,(5,0))
     movimiento = motion(k1,(5,0))
-    attack=archer_attack(initial_board,movimiento)
+    attack=archer_attack(KMA.initial_board,movimiento)
     duo = []
-    print(obstacle_in_the_way(initial_board,(4,4),(2,2)))
+    print(obstacle_in_the_way(KMA.initial_board,(4,4),(2,2)))
     #print('Pieza atacable: ', initial_board[attack[0].attack.damaged[0]].type,'-',initial_board[attack[0].attack.damaged[0]].team,' Puntos de herida: ', attack[0].attack.dmg_points)
     #print('Pieza curable: ', initial_board[attack[1].attack.damaged[0]].type,'-',initial_board[attack[1].attack.damaged[0]].team, ' Puntos de herida: ',attack[0].attack.dmg_points)
     #print('Pieza curable: ', initial_board[attack[2].attack.damaged[0]].type, '-',initial_board[attack[1].attack.damaged[0]].team, ' Puntos de herida: ', attack[0].attack.dmg_points)
