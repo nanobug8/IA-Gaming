@@ -1,3 +1,4 @@
+#Contructors of all objects used by mechanics.py
 class piece():
 
     def __init__(self, team, type, health, position):
