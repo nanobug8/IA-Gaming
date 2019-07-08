@@ -25,6 +25,9 @@ initial_board = [knight_1,mage_1,archer_1,knight_2,mage_2,archer_2]
 def manhattan_distance(pos1,pos2):
     return (abs(pos1[0]-pos2[0])+abs(pos1[1]-pos2[1]))
 
+def cmp(a,b):
+	return (a > b) - (a < b)
+
 def neighbours(pos):
     x=pos[0]
     y=pos[1]
@@ -65,6 +68,7 @@ def check_pos (board,position,obstacles=obstacles):
 #Checks if there's an obstacle or token between two pieces that share an axis
 #Attribute axis is the non-shared component between the coordinates
 #Returns true if the way is covered
+"""
 def obstacle_in_the_way(board,coord1,coord2,axis):
     ok = False
     lowest = min(coord1[axis],coord2[axis])
@@ -77,6 +81,34 @@ def obstacle_in_the_way(board,coord1,coord2,axis):
             ok = True
             return ok
     return ok
+"""
+
+def obstacle_in_the_way(board,coord1,coord2):	
+	ok=False
+	if(coord1[0]>coord2[0]):
+		tmp=coord1
+		coord1=coord2
+		coord2=tmp
+		
+	yo=coord1[1]
+	incy=cmp(coord2[1]-coord1[1],0)
+	incx=cmp(coord2[0]-coord1[0],0)
+	axis=0	
+
+	lowest = coord1[axis]+1
+	highest = coord2[axis]
+
+	for i in range (lowest,highest):
+		yo+=incy	
+		if (axis==0) & (not check_pos(board,(i,yo))):
+			ok = True
+			return ok
+
+		if (axis==1)& (not check_pos(board,(yo,i))):
+			ok = True
+			return ok
+	return ok
+
 
 def enemy_in_position(board,attacked_position,attacking_piece):
     ok = False
@@ -85,7 +117,6 @@ def enemy_in_position(board,attacked_position,attacking_piece):
             if (other_piece.position==attacked_position):
                 ok = True
     return ok
-
 
 def knight_motion(board,piece):
     k_motion=[]
@@ -227,12 +258,12 @@ def archer_attack(board,motion):
         token = board[index]
         ##Check orthogonal lines
         if (token.position[0]==motion.final_position[0])&(board[index].team!=motion.piece.team):
-            if (not obstacle_in_the_way(board,token.position,motion.final_position,1))&(manhattan_distance(token.position,motion.final_position)>a_dist_1):
+            if (not obstacle_in_the_way(board,token.position,motion.final_position))&(manhattan_distance(token.position,motion.final_position)>a_dist_1):
                 a_attack = attack(damaged=index,dmg_points=archer_damage)
                 a_move = move(motion,a_attack)
                 total_moves.append(a_move)
         if (token.position[1]==motion.final_position[1])&(board[index].team!=motion.piece.team):
-            if (not obstacle_in_the_way(board,token.position,motion.final_position,0))&(manhattan_distance(token.position,motion.final_position)>a_dist_1):
+            if (not obstacle_in_the_way(board,token.position,motion.final_position))&(manhattan_distance(token.position,motion.final_position)>a_dist_1):
                 a_attack = attack(damaged=index,dmg_points=archer_damage)
                 a_move = move(motion,a_attack)
                 total_moves.append(a_move)
@@ -256,7 +287,7 @@ def main():
     movimiento = motion(k1,(5,0))
     attack=archer_attack(initial_board,movimiento)
     duo = []
-    #print(obstacle_in_the_way(initial_board,(2,3),(7,3),0))
+    print(obstacle_in_the_way(initial_board,(4,4),(2,2)))
     #print('Pieza atacable: ', initial_board[attack[0].attack.damaged[0]].type,'-',initial_board[attack[0].attack.damaged[0]].team,' Puntos de herida: ', attack[0].attack.dmg_points)
     #print('Pieza curable: ', initial_board[attack[1].attack.damaged[0]].type,'-',initial_board[attack[1].attack.damaged[0]].team, ' Puntos de herida: ',attack[0].attack.dmg_points)
     #print('Pieza curable: ', initial_board[attack[2].attack.damaged[0]].type, '-',initial_board[attack[1].attack.damaged[0]].team, ' Puntos de herida: ', attack[0].attack.dmg_points)
