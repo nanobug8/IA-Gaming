@@ -1,4 +1,4 @@
-from classes import piece,motion,attack,move
+from adversarial_search.classes import piece, motion, attack, move
 #from KMA import KMA
 
 k_hp = 30
@@ -54,8 +54,8 @@ def surroundings (pos):
                                   (0 <= y2 <= 4))]
     return  neighbors(pos[0],pos[1])
 
-#Verifies if a given position is occuppied (either by an obstacle or a token)
-#Returns true if the position is free
+#Verlifies if a given position is occuppied (either by an obstacle or a token)
+#Retreturns true if the position is free
 def check_pos (board,position,obstacles=obstacles):
     if ((not(position in get_position_list(board)))&(not(position in obstacles))&((position[0]>=0)&(position[0]<=8)&(position[1]>=0)&(position[1]<=4))):
         return True

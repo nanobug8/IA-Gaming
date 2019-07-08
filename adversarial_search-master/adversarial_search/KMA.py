@@ -5,10 +5,18 @@ from adversarial_search.core import Game
 from adversarial_search.core import match,run_match
 from adversarial_search.utils import game_result
 
+
+
 PLAYERS = ('Good','Bad')
 k_hp = 30
 m_hp = 30
 a_hp = 30
+def enemy_in_position(board,attacked_position,attacking_piece):
+    ok = False
+    for other_piece in board:
+        if (other_piece.team!=attacking_piece.team):
+            if (other_piece.position==attacked_position):
+                ok = True
 knight_1 = piece(1, 1, k_hp, (0, 3))
 mage_1 = piece(1, 1, m_hp, (0, 2))
 archer_1 = piece(1, 1, a_hp, (0, 1))
