@@ -77,6 +77,7 @@ class KMA (Game):
 def test_game():
     from adversarial_search.agents.random import RandomAgent
     from adversarial_search.agents.mcts import MCTSAgent
+    PARAM.set_parameters(30,12,10,5,30,20,4,5,30,2,1,2)
     game = KMA()
     agent0 = RandomAgent(name='Player 0')
     agent1 = RandomAgent(name='Player 1')
@@ -88,9 +89,9 @@ def test_game():
             print(moves)
             
 
-def main():
-    test_game()
+#def main():
+#    test_game()
 
-if  __name__ =='__main__':
-    main()
+#if  __name__ =='__main__':
+#    main()
 
