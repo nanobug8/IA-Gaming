@@ -1,7 +1,5 @@
-##############################################################################################
 #    Para llevar a cabo la optimizacion es necesario ejecutar el arvhico optimization bajo   #
 #    el directorio adversarial_search-master/adversarial_search/games/                       #
-##############################################################################################
 
 Implementacion de un jugador artificial para un juego estrategia por turnos sobre un tablero.
 El juego se realiza sobre un damero de 5x9 donde cada uno de los 2 jugadores tiene 3 piezas de 3 tipos distintos
